@@ -2,9 +2,10 @@ let rock = document.querySelector("#rock");
 let paper = document.querySelector("#paper");
 let scissor = document.querySelector("#scissor");
 let result = document.querySelector("h3");
-let wins = document.querySelector("#wins")
-let loses = document.querySelector("#loses")
-let tie = document.querySelector("#tie")
+let wins = document.querySelector("#wins");
+let loses = document.querySelector("#loses");
+let tie = document.querySelector("#tie");
+let resetGame = document.querySelector("#reset-game");
 const score = {
     wins: 0, loses: 0, tie:0
 };
@@ -73,4 +74,14 @@ scissor.addEventListener("click", function(evt){
     wins.innerText = `Wins: ${score.wins}`;
     loses.innerText = `Loses: ${score.loses}`;
     tie.innerText = `Tie: ${score.tie}`;
+})
+resetGame.addEventListener("click", function(){
+    wins.innerText = "Wins: 0";
+    loses.innerText = "Loses: 0";
+    tie.innerText = "Tie: 0";
+    score.wins = 0;
+    score.loses = 0;
+    score.tie = 0;
+    result.textContent = "Result Value";
+    result.style.color = "#dadada";
 })
